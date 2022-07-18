@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazir.eot'); 
+    src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Vazir.woff2') format('woff2'),
+         url('../fonts/Vazir.woff') format('woff'),
+         url('../fonts/Vazir.ttf')  format('truetype'),
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1.7rem;
+}
+body{
+    font-family: 'Vazir' , Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-areas:'nav',
+                        'header',
+                        'main',
+                        'footer';
+}
+#navbar{
+    grid-area: 'nav';
+}
+#header{
+    grid-area: 'header';
+    display:grid;
+    grid-template-areas:'m-side m-s-1 m-s-1 ',
+                        'm-side m-s-2 m-s-2 ', 
+                        'm-side m-s-3 m-s-3 ';
+}
+#main {
+    grid-area: 'main';
+}
+#main .main__section-1{
+    grid-area: 'm-s-1';
+}
+#main .main__section-2{
+    grid-area: 'm-s-2';   
+}
+#main .main__section-3{
+    grid-area: 'm-s-3';
+}
+#main .main__sidebar{
+    grid-area: 'm-side';
+}
+#footbar{
+    grid-area: 'footer';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
