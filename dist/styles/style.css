@@ -12,41 +12,88 @@
     box-sizing: border-box;
     line-height: 1.7rem;
 }
+:root{
+    --dark-color:rgb(51, 51, 51);
+    --light-color:rgb(240, 248, 255);
+    --secondery-color:rgb(6, 185, 149);
+    --danger-color:rgb(255, 71, 71);
+    --primary-color:rgb(0, 106, 255);
+    --warn-color:rgb(255, 238, 0);
+}
+.bg-dark{
+    background-color: var(--dark-color);
+}
 body{
     font-family: 'Vazir' , Arial, Helvetica, sans-serif;
     display: grid;
-    grid-template-areas:'nav',
-                        'header',
-                        'main',
+    grid-template-areas:'nav'
+                        'header'
+                        'main'
                         'footer';
 }
+/* nav style  */
 #navbar{
-    grid-area: 'nav';
+    grid-area: nav;
+    display: flex;
+    flex-flow: nowrap row-reverse;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem;
 }
+#navbar .nav__logo .nav__logo-text{
+    color: var(--light-color);
+}
+#navbar .nav__logo .nav__logo-text-mark{
+    color: var(--secondery-color);
+}
+#navbar .nav__menu .nav__menu-list{
+display: flex;
+list-style-type: none;
+}
+#navbar .nav__menu-list-item{
+    margin: 0rem 1rem;
+}
+#navbar .nav__menu-list-item .nav__menu-list-item-link{
+    color: var(--light-color);
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 10px;
+}
+#navbar .nav__menu-list-item .nav__menu-list-item-link-active{
+ background-color: var(--secondery-color);
+}
+#navbar .nav__menu-list-item .nav__menu-list-item-link:hover{
+    color: var(--secondery-color);
+    border:1px solid var(--secondery-color);
+    background-color: var(--light-color);
+}
+/* header style */
 #header{
-    grid-area: 'header';
+    grid-area: header;
     display:grid;
-    grid-template-areas:'m-side m-s-1 m-s-1 ',
-                        'm-side m-s-2 m-s-2 ', 
+    grid-template-areas:'m-side m-s-1 m-s-1 '
+                        'm-side m-s-2 m-s-2 ' 
                         'm-side m-s-3 m-s-3 ';
 }
+/* main style */
 #main {
-    grid-area: 'main';
+    grid-area: main;
 }
 #main .main__section-1{
-    grid-area: 'm-s-1';
+    grid-area: m-s-1;
 }
 #main .main__section-2{
-    grid-area: 'm-s-2';   
+    grid-area: m-s-2;   
 }
 #main .main__section-3{
-    grid-area: 'm-s-3';
+    grid-area: m-s-3;
 }
 #main .main__sidebar{
-    grid-area: 'm-side';
+    grid-area: m-side;
 }
+/* footer style */
 #footbar{
-    grid-area: 'footer';
+    grid-area: footer;
     display: flex;
     flex-direction: column;
     justify-content: center;
