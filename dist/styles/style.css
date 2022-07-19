@@ -19,6 +19,8 @@
     --danger-color:rgb(255, 71, 71);
     --primary-color:rgb(0, 106, 255);
     --warn-color:rgb(255, 238, 0);
+    --third-color:rgb(54, 44, 84);
+    --forth-color:rgb(255, 121, 63);
 }
 .bg-dark{
     background-color: var(--dark-color);
@@ -35,6 +37,8 @@ body{
 #navbar{
     grid-area: nav;
     display: flex;
+    position: fixed;
+    width: 100vw;
     flex-flow: nowrap row-reverse;
     justify-content: space-between;
     align-items: baseline;
@@ -70,14 +74,57 @@ list-style-type: none;
 /* header style */
 #header{
     grid-area: header;
-    display:grid;
-    grid-template-areas:'m-side m-s-1 m-s-1 '
-                        'm-side m-s-2 m-s-2 ' 
-                        'm-side m-s-3 m-s-3 ';
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-color);
+    background: var(--dark-color) url('../images/showcase.jpg') no-repeat center center/cover;
+    width: 100vw;
+    height: 100vh;
 }
+#header .header__content{
+    padding: 1rem;
+    margin: 1rem;
+}
+#header .header__content .header__content-category{
+    background-color: var(--third-color);
+    display: inline-block;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+#header .header__content .header__content-text-head{
+    font-size: 3rem;
+    padding: 1rem;
+}
+#header .header__content .header__content-text-p{
+    font-size: 1rem;
+    padding: 1rem;
+}
+#header .header__content .header__content-text-btn{
+    margin: 2rem;
+}
+#header .header__content .header__content-text-btn-more{
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--light-color);
+    background-color: var(--forth-color);
+    border-radius: 5px;
+}
+#header .header__content .header__content-text-btn-more:hover{
+    color: var(--forth-color);
+    background-color: var(--light-color);
+    border: 1px solid var(--forth-color);
+}
+
 /* main style */
 #main {
     grid-area: main;
+    display:grid;
+    grid-template-areas:'m-side m-s-1 m-s-1 '
+    'm-side m-s-2 m-s-2 ' 
+    'm-side m-s-3 m-s-3 ';
 }
 #main .main__section-1{
     grid-area: m-s-1;
