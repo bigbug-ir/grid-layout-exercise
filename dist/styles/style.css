@@ -19,8 +19,8 @@
     --danger-color:rgb(255, 71, 71);
     --primary-color:rgb(0, 106, 255);
     --warn-color:rgb(255, 238, 0);
-    --third-color:rgb(54, 44, 84);
-    --forth-color:rgb(255, 121, 63);
+    --nature-color:rgb(54, 44, 84);
+    --animal-color:rgb(255, 121, 63);
 }
 .bg-dark{
     background-color: var(--dark-color);
@@ -28,17 +28,20 @@
 body{
     font-family: 'Vazir' , Arial, Helvetica, sans-serif;
     display: grid;
+    
     grid-template-areas:'nav'
                         'header'
                         'main'
                         'footer';
+    background-color: #ccc;
+    width: 100vw;
 }
 /* nav style  */
 #navbar{
     grid-area: nav;
     display: flex;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     flex-flow: nowrap row-reverse;
     justify-content: space-between;
     align-items: baseline;
@@ -117,26 +120,67 @@ list-style-type: none;
     background-color: var(--light-color);
     border: 1px solid var(--forth-color);
 }
-
 /* main style */
 #main {
     grid-area: main;
-    display:grid;
-    grid-template-areas:'m-side m-s-1 m-s-1 '
-    'm-side m-s-2 m-s-2 ' 
-    'm-side m-s-3 m-s-3 ';
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
 }
-#main .main__section-1{
-    grid-area: m-s-1;
+#main .main__content{
+    display: flex;
+    flex-flow: nowrap column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
 }
-#main .main__section-2{
-    grid-area: m-s-2;   
+
+/* article */
+#main .main__content-article{
+    display: grid;
+    /* width: 100vw; */
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+    margin: 1rem;
 }
-#main .main__section-3{
-    grid-area: m-s-3;
+ #main .article__content{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    background-color: var(--light-color);
 }
-#main .main__sidebar{
-    grid-area: m-side;
+#main .article__content:first-child{
+    grid-column: 1/ span 2;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1rem;
+}
+#main .article__content:last-child{
+    grid-column: 2/ span 2;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1rem;
+}
+#main .article__content img{
+    width: 100%;
+} 
+#main .article__category-animal{
+    background-color: var(--animal-color);
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    color: var(--light-color);
+}
+#main .article__category-nature{
+    background-color: var(--nature-color);
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    color: var(--light-color);
 }
 /* footer style */
 #footbar{
