@@ -292,6 +292,9 @@ list-style-type: none;
     justify-content: center;
     align-items: center;
 }
+#footbar .footbar__content-section-4 h2{
+    text-align: center;
+}
 @media screen and (max-width:768px) {
     #main .main__content-article{
         grid-template-columns: repeat(2,1fr);
